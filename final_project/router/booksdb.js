@@ -11,4 +11,9 @@ let books = {
       10: {"author": "Samuel Beckett","title": "Molloy, Malone Dies, The Unnamable, the trilogy", "reviews": {} }
 }
 
-module.exports=books;
+const booksPromised = new Promise((resolve, reject) => {
+    resolve(books);
+    if(false) reject('these shouldn\'t supposed to happen but it is rejected!')
+});
+
+module.exports.books = booksPromised;
